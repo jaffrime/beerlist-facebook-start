@@ -1,5 +1,5 @@
 //package and module requirements
-var express = require('express')
+var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('./models/passport');
@@ -23,7 +23,7 @@ app.use('/beers', beerRoutes);
 app.use('/auth', authRoutes);
 
 app.all('*', function(req, res) {
-  res.sendFile(__dirname + "/public/index.html")
+  res.sendFile(__dirname + "/public/index.html");
 });
 
 // main error handler

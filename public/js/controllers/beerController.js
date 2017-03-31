@@ -13,14 +13,18 @@ app.controller('beerController', function($scope, beerFactory, $stateParams) {
     beerFactory.addReview($stateParams.id, $scope.newReview)
       .then(function(beer) {
         $scope.beer = beer;
-      })
+      }).catch(function(err){
+        console.error(err)
+      });
   }
 
   $scope.deleteReview = function() {
     beerFactory.deleteReview($stateParams.id, this.review._id)
       .then(function(beer) {
         $scope.beer = beer;
-      })
+      }).catch(function(err){
+        console.error(err)
+      });
   }
 
 
